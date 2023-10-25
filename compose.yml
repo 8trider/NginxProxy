@@ -1,0 +1,49 @@
+version: '2'
+
+services:
+  nginx-proxy:
+    image: nginxproxy/nginx-proxy
+    ports:
+      - "80:80"
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+  
+  shw:
+    image: seohyeongwon/8trider.github.io:1.1.0
+    expose:
+      - "80"
+    environment:
+      - VIRTUAL_HOST=shw.com
+      - VIRTUAL_PORT=80
+
+  tjk:
+    image: tjkpolisher/tjkpolisher.github.io
+    expose:
+      - "80"
+    environment:
+      - VIRTUAL_HOST=tjk.io
+      - VIRTUAL_PORT=80
+
+  odg:
+    image: oelrm/doxgxxn.github.io
+    expose:
+      - "80"
+    environment:
+      - VIRTUAL_HOST=odg.org
+      - VIRTUAL_PORT=80
+
+  hjw:
+    image: jiugnim/sam1000wongithubio 
+    expose:
+      - "80"
+    environment:
+      - VIRTUAL_HOST=hjw.kr
+      - VIRTUAL_PORT=80
+
+  ltk:
+    image: felicette1963/felicette1963.github.io
+    expose:
+      - "80"
+    environment:
+      - VIRTUAL_HOST=ltk.net
+      - VIRTUAL_PORT=80    
